@@ -10,9 +10,6 @@ const Home = () => {
         next: 1
     })
     const { prev, next } = pagination
-    // console.log(pokemonsAPI)
-    // console.log(pokemonsWithData)
-    // console.log(pokemonsSearch)
 
     useEffect(() => {
         getPokemons()
