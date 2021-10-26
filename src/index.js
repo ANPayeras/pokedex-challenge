@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PokedexState from './context/useState';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <React.StrictMode>
-    <App />
+    <PokedexState>
+      <App />
+    </PokedexState>
   </React.StrictMode>,
   document.getElementById('root')
 );

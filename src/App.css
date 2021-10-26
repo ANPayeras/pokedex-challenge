@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.searchBarContainer {
+  margin: 10px 10px;
+}
+
+.pokemonsContainer {
+  width: 70vw;
+  height: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.pokemonCard {
+  margin: 10px;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 9px 3px 22px -3px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokemonCard:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.pokemonCard1 {
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+  flex: 1;
+}
+
+.pokemonCard2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.btnContainer {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px;
+  height: 80px;
+}
+
+.btnContainer button {
+  border-style: none;
+  background-color: transparent;
+  transition: all 0.5s ease;
+}
+
+.btnContainer button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*  */
+
+.pokemonDetailHide {
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  transition: all 1s ease-in-out;
+}
+
+.pokemonDetailShow {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 1s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  background-color: lightslategrey;
+  transition: all 1s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.detailContainer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.detailContainer2 {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+}
+.detailContainer2 div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.detailContainer3 {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+}
+.detailContainer3 div {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.returnDetail {
+  border-style: none;
+  background-color: lightyellow;
+  cursor: pointer;
+  width: 50%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
 }
