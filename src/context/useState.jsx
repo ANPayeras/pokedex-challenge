@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import React, { useReducer } from 'react';
 import pokedexReducer from './useReducer';
 import pokedexContext from './useContext';

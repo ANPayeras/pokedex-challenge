@@ -1,9 +1,45 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     mode: 'development',
+    entry: ["regenerator-runtime/runtime.js", './src/server/index.js'],
+    target: 'node',
+    externals: [nodeExternals()],
+    output: {
+        publicPath: '/',
+        path: path.resolve(__dirname, 'server-build'),
+        filename: 'index.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+                exclude: /node_modules/,
+            }
+        ],
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
+};
 
-    /* context: path.resolve(__dirname, 'src/client'), */
+
+/* module.exports = {
+    mode: 'development',
+
+    context: path.resolve(__dirname, 'src/client'),
     context: path.resolve(__dirname, 'src'),
 
     entry: {
@@ -28,7 +64,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             },
-            /* { test: /\.css$/, use: 'css-loader' }, */
+            { test: /\.css$/, use: 'css-loader' },
             {
                 test: /\.css$/,
                 use: [
@@ -48,4 +84,4 @@ module.exports = {
         extensions: ['.js', '.jsx'],
     },
     devtool: 'inline-source-map',
-};
+}; */
